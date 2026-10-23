@@ -84,7 +84,7 @@
       var shown = data.filter(function (ev) { return mode === "upcoming" ? ev.date >= today : ev.date < today; });
       if (mode === "past") shown.reverse();
       if (!shown.length) {
-        list.innerHTML = '<div class="empty reveal in"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><h3>' +
+        list.innerHTML = '<div class="empty reveal in"><h3>' +
           (mode === "upcoming" ? "Aucun évènement programmé pour le moment" : "Aucun évènement passé") +
           '</h3><p>' + (mode === "upcoming" ? "Les prochaines dates seront annoncées ici dès qu\'elles seront fixées. Revenez bientôt, ou écrivez-nous pour être prévenu." : "L\'historique de nos rendez-vous apparaîtra ici.") + '</p></div>';
         return;
