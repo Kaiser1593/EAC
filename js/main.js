@@ -116,10 +116,14 @@
     plans.forEach(function (p) {
       var key = p.dataset.plan;
       var price = p.querySelector("[data-price]");
-      if (cfg.adhesions && price) price.textContent = cfg.adhesions[key];
+      if (cfg.adhesions && price) {
+        if (cfg.adhesions[key] === 0) price.parentNode.textContent = "Gratuit";
+        else price.textContent = cfg.adhesions[key];
+      }
       p.addEventListener("click", function () {
         plans.forEach(function (x) { x.classList.remove("selected"); });
         p.classList.add("selected"); typeSel.value = key;
+        typeSel.dispatchEvent(new Event("change"));
         document.getElementById("formulaire").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
       });
     });
@@ -130,13 +134,40 @@
 
   var form = document.getElementById("adhesion-form");
   if (form) {
+    var list = document.getElementById("enfants"), wrap = document.getElementById("enfants-wrap");
+    var refreshRows = function () {
+      var rows = list.querySelectorAll(".enfant-row");
+      rows.forEach(function (r) { r.querySelector(".rm").hidden = rows.length < 2; });
+      var unit = cfg.adhesions && cfg.adhesions.famille;
+      document.getElementById("enfants-total").textContent = unit
+        ? "Total : " + rows.length + " × " + unit + " € = " + rows.length * unit + " € par an" : "";
+    };
+    var addRow = function () {
+      var r = document.createElement("div"); r.className = "enfant-row";
+      r.innerHTML = '<input name="enfant_nom" placeholder="Prénom de l\'enfant" aria-label="Prénom de l\'enfant">' +
+        '<input name="enfant_niveau" placeholder="Niveau (ex. CM1, 5e)" aria-label="Niveau scolaire">' +
+        '<button type="button" class="rm" aria-label="Retirer cet enfant">&times;</button>';
+      r.querySelector(".rm").addEventListener("click", function () { r.remove(); refreshRows(); });
+      list.appendChild(r); refreshRows();
+    };
+    addRow();
+    document.getElementById("add-enfant").addEventListener("click", function () {
+      addRow(); list.lastChild.firstChild.focus();
+    });
+    var toggleKids = function () { wrap.hidden = typeSel.value !== "famille"; };
+    typeSel.addEventListener("change", toggleKids); toggleKids();
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var f = new FormData(form), g = function (k) { return f.get(k) || ""; };
+      var noms = f.getAll("enfant_nom"), niveaux = f.getAll("enfant_niveau"), kids = [];
+      if (typeSel.value === "famille") noms.forEach(function (n, i) {
+        if (n.trim() || niveaux[i].trim()) kids.push("- " + n.trim() + " (" + (niveaux[i].trim() || "niveau non précisé") + ")");
+      });
       var body = "Demande d'adhésion à Entr'Aide et Culture\n\n" +
         "Nom : " + g("nom") + "\nPrénom : " + g("prenom") + "\nEmail : " + g("email") + "\nTéléphone : " + g("tel") +
         "\nType d'adhésion : " + typeSel.options[typeSel.selectedIndex].text +
-        "\nEnfant / niveau : " + g("niveau") + "\n\nMessage :\n" + g("message");
+        (kids.length ? "\nEnfant(s) à inscrire (" + kids.length + ") :\n" + kids.join("\n") + "\nMontant : " + kids.length * cfg.adhesions.famille + " € par an\n" : "") + "\nMessage :\n" + g("message");
       var notice = document.getElementById("form-notice");
       notice.textContent = "Merci " + g("prenom") + ". Votre messagerie va s'ouvrir avec votre demande déjà rédigée : il ne reste qu'à l'envoyer.";
       notice.classList.add("show");

@@ -25,16 +25,16 @@
 <main>
 
 <section class="page-hero"><div class="blob b2"></div>
-  <div class="container"><span class="eyebrow">Adhésion</span>
+  <div class="container"><span class="eyebrow">inscription et Adhésion</span>
   <h1>Rejoindre Entr'Aide et Culture</h1>
   <p class="lead">Choisissez votre formule puis remplissez le formulaire. Nous revenons vers vous rapidement.</p></div>
 </section>
 <section class="section" style="padding-top:20px">
   <div class="container">
     <div class="grid grid-3">
-      <article class="card plan reveal" data-plan="famille"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 010 6.8M18 14.3c2.2.6 3.5 2.4 3.5 5.7"/></svg></div><h3>Famille</h3><div class="price"><span data-price></span> €<small> / an</small></div><p>Pour inscrire un ou plusieurs enfants à l'aide aux devoirs.</p></article>
+      <article class="card plan reveal" data-plan="famille"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 010 6.8M18 14.3c2.2.6 3.5 2.4 3.5 5.7"/></svg></div><h3>Inscription enfant</h3><div class="price"><span data-price></span> €<small> / enfant / an</small></div><p>Pour inscrire un ou plusieurs enfants à l'aide aux devoirs.</p></article>
       <article class="card plan reveal" style="--d:.1s" data-plan="benevole"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2H10l-5 4v-4a2 2 0 01-1-2z"/></svg></div><h3>Bénévole</h3><div class="price"><span data-price></span> €<small> / an</small></div><p>Pour donner un peu de votre temps aux élèves.</p></article>
-      <article class="card plan reveal" style="--d:.2s" data-plan="soutien"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-8-4.9-8-10.5A4.5 4.5 0 0112 7a4.5 4.5 0 018 2.5C20 15.1 12 20 12 20z"/></svg></div><h3>Membre soutien</h3><div class="price"><span data-price></span> €<small> / an</small></div><p>Pour accompagner l'association dans son développement.</p></article>
+      <article class="card plan reveal" style="--d:.2s" data-plan="adherent"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-8-4.9-8-10.5A4.5 4.5 0 0112 7a4.5 4.5 0 018 2.5C20 15.1 12 20 12 20z"/></svg></div><h3>Adhérent</h3><div class="price"><span data-price></span> €<small> / an</small></div><p>Pour accompagner l'association dans son développement.</p></article>
     </div>
   </div>
 </section>
@@ -49,8 +49,11 @@
           <div class="field"><label for="email">Adresse email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
           <div class="field"><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel"></div>
           <div class="field full"><label for="type">Type d'adhésion</label>
-            <select id="type" name="type"><option value="famille">Famille</option><option value="benevole">Bénévole</option><option value="soutien">Membre soutien</option></select></div>
-          <div class="field full"><label for="niveau">Enfant(s) et niveau scolaire</label><input id="niveau" name="niveau" placeholder="Par exemple : Léa, CM1 et Hugo, 5e"></div>
+            <select id="type" name="type"><option value="famille">Inscription enfant</option><option value="benevole">Bénévole</option><option value="adherent">Adhérent</option></select></div>
+          <div class="field full" id="enfants-wrap"><span class="legend">Enfant(s) à inscrire</span>
+            <div id="enfants"></div>
+            <button type="button" class="btn btn-ghost" id="add-enfant" style="align-self:flex-start;padding:10px 20px">+ Ajouter un autre enfant</button>
+            <p id="enfants-total" style="margin:6px 0 0;font-weight:600;color:var(--teal-dark)"></p></div>
           <div class="field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Disponibilités, matières à renforcer, questions..."></textarea></div>
           <label class="check full"><input type="checkbox" required> J'accepte que ces informations soient utilisées par l'association pour traiter ma demande d'adhésion.</label>
         </div>

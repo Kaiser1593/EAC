@@ -289,6 +289,12 @@ p { margin: 0 0 1em; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .field { display: flex; flex-direction: column; gap: 8px; }
 .field.full { grid-column: 1 / -1; }
+.field[hidden] { display: none; }
+.enfant-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; margin-bottom: 10px; align-items: center; }
+.enfant-row input { width: 100%; }
+.enfant-row .rm { border: 0; background: transparent; font-size: 1.6rem; line-height: 1; cursor: pointer; color: var(--teal-dark); padding: 0 8px; }
+.enfant-row .rm[hidden] { display: none; }
+@media (max-width: 600px) { .enfant-row { grid-template-columns: 1fr auto; } .enfant-row input:first-child { grid-column: 1 / -1; } }
 .field label, .legend { font-weight: 600; font-size: 0.9rem; color: var(--teal-dark); }
 .field input, .field select, .field textarea {
   font: inherit; padding: 14px 16px; border-radius: var(--radius-sm); border: 2px solid var(--sand); background: var(--cream); color: var(--ink);
