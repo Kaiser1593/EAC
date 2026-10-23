@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soutenir - Entr'Aide et Culture</title>
+<meta name="description" content="Faites un don pour soutenir l'association Entr'Aide et Culture.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Entr'Aide et Culture, accueil">
+      <img src="assets/logo.png" alt="Logo Entr'Aide et Culture" width="52" height="52">
+      <span>Entr'Aide et Culture<small>EAC</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+    <ul class="nav-links"><li><a href="index.html">Accueil</a></li><li><a href="evenements.html">Infos</a></li><li><a href="adhesion.html">Adhérer</a></li><li><a class="btn btn-primary" href="don.html">Soutenir</a></li></ul>
+  </div>
+</header>
+<main>
+
+<section class="page-hero"><div class="blob b1"></div>
+  <div class="container"><span class="eyebrow">Soutenir</span>
+  <h1>Un don pour aider les élèves à avancer</h1>
+  <p class="lead">Entr'Aide et Culture fonctionne grâce à ses bénévoles et à la générosité de ses soutiens. Chaque don compte.</p></div>
+</section>
+<section class="section" style="padding-top:20px">
+  <div class="container split" style="align-items:start">
+    <div class="reveal left">
+      <h2>Ce que permet votre soutien</h2>
+      <ul class="checklist">
+        <li>Du matériel scolaire et des livres pour les élèves accompagnés.</li>
+        <li>Des ateliers et sorties culturelles ouverts à tous.</li>
+        <li>Le fonctionnement quotidien de l'aide aux devoirs.</li>
+      </ul>
+      <div class="grid" style="margin-top:34px;gap:18px">
+        <div class="card" style="padding:24px"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-8-4.9-8-10.5A4.5 4.5 0 0112 7a4.5 4.5 0 018 2.5C20 15.1 12 20 12 20z"/></svg></div><h3>Don libre</h3><p>Le montant et la fréquence vous appartiennent.</p></div>
+      </div>
+    </div>
+    <div class="form-card reveal right">
+      <form id="don-form">
+        <div class="legend">Fréquence</div>
+        <div class="toggle"><button type="button" class="active" data-mode="once">Don unique</button><button type="button" data-mode="monthly">Don mensuel</button></div>
+        <div class="legend">Montant</div>
+        <div class="amounts">
+          <button type="button" class="amount" data-amount="10">10 €</button>
+          <button type="button" class="amount active" data-amount="20">20 €</button>
+          <button type="button" class="amount" data-amount="50">50 €</button>
+          <button type="button" class="amount" data-amount="100">100 €</button>
+        </div>
+        <div class="field"><label for="custom">Autre montant, en euros</label><input id="custom" type="number" min="1" inputmode="numeric" placeholder="Saisir un montant"></div>
+        <div class="total"><span id="don-label">don unique</span><b id="don-total">20 €</b></div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Faire un don <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="notice" id="don-notice" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+<section class="section cta" style="padding-top:0"><div class="container">
+  <div class="cta-box reveal"><h2>Donner de son temps compte aussi</h2><p>Devenez bénévole et accompagnez un élève dans ses devoirs.</p>
+  <div class="cta-actions"><a class="btn btn-light" href="adhesion.html">Devenir bénévole</a></div></div>
+</div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/logo.png" alt="" width="56" height="56"><h3 style="margin:0">Entr'Aide et Culture</h3></div>
+        <p>Association d'aide aux devoirs pour les élèves du primaire et du collège. Apprendre ensemble, grandir ensemble.</p>
+      </div>
+      <div><h3>Le site</h3><ul>
+        <li><a href="index.html">Accueil</a></li><li><a href="evenements.html">Informations et évènements</a></li>
+        <li><a href="adhesion.html">Adhérer</a></li><li><a href="don.html">Soutenir l'association</a></li></ul></div>
+      <div><h3>Contact</h3><ul><li><a data-mail href="#"></a></li></ul></div>
+    </div>
+    <div class="copyright"><span>Entr'Aide et Culture (EAC)</span><span>Tous droits réservés</span></div>
+  </div>
+</footer>
+<script src="js/config.js"></script>
+<script src="data/evenements.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

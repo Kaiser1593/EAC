@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adhérer - Entr'Aide et Culture</title>
+<meta name="description" content="Rejoignez l'association Entr'Aide et Culture.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Entr'Aide et Culture, accueil">
+      <img src="assets/logo.png" alt="Logo Entr'Aide et Culture" width="52" height="52">
+      <span>Entr'Aide et Culture<small>EAC</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+    <ul class="nav-links"><li><a href="index.html">Accueil</a></li><li><a href="evenements.html">Infos</a></li><li><a href="adhesion.html" aria-current="page">Adhérer</a></li><li><a class="btn btn-primary" href="don.html">Soutenir</a></li></ul>
+  </div>
+</header>
+<main>
+
+<section class="page-hero"><div class="blob b2"></div>
+  <div class="container"><span class="eyebrow">Adhésion</span>
+  <h1>Rejoindre Entr'Aide et Culture</h1>
+  <p class="lead">Choisissez votre formule puis remplissez le formulaire. Nous revenons vers vous rapidement.</p></div>
+</section>
+<section class="section" style="padding-top:20px">
+  <div class="container">
+    <div class="grid grid-3">
+      <article class="card plan reveal" data-plan="famille"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.6a3.5 3.5 0 010 6.8M18 14.3c2.2.6 3.5 2.4 3.5 5.7"/></svg></div><h3>Famille</h3><div class="price"><span data-price></span> €<small> / an</small></div><p>Pour inscrire un ou plusieurs enfants à l'aide aux devoirs.</p></article>
+      <article class="card plan reveal" style="--d:.1s" data-plan="benevole"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 012-2h12a2 2 0 012 2v9a2 2 0 01-2 2H10l-5 4v-4a2 2 0 01-1-2z"/></svg></div><h3>Bénévole</h3><div class="price"><span data-price></span> €<small> / an</small></div><p>Pour donner un peu de votre temps aux élèves.</p></article>
+      <article class="card plan reveal" style="--d:.2s" data-plan="soutien"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-8-4.9-8-10.5A4.5 4.5 0 0112 7a4.5 4.5 0 018 2.5C20 15.1 12 20 12 20z"/></svg></div><h3>Membre soutien</h3><div class="price"><span data-price></span> €<small> / an</small></div><p>Pour accompagner l'association dans son développement.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section" id="formulaire" style="padding-top:0">
+  <div class="container" style="max-width:860px">
+    <div class="form-card reveal">
+      <h2 style="font-size:2rem">Formulaire d'adhésion</h2>
+      <form id="adhesion-form">
+        <div class="form-grid">
+          <div class="field"><label for="prenom">Prénom</label><input id="prenom" name="prenom" required autocomplete="given-name"></div>
+          <div class="field"><label for="nom">Nom</label><input id="nom" name="nom" required autocomplete="family-name"></div>
+          <div class="field"><label for="email">Adresse email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel"></div>
+          <div class="field full"><label for="type">Type d'adhésion</label>
+            <select id="type" name="type"><option value="famille">Famille</option><option value="benevole">Bénévole</option><option value="soutien">Membre soutien</option></select></div>
+          <div class="field full"><label for="niveau">Enfant(s) et niveau scolaire</label><input id="niveau" name="niveau" placeholder="Par exemple : Léa, CM1 et Hugo, 5e"></div>
+          <div class="field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Disponibilités, matières à renforcer, questions..."></textarea></div>
+          <label class="check full"><input type="checkbox" required> J'accepte que ces informations soient utilisées par l'association pour traiter ma demande d'adhésion.</label>
+        </div>
+        <button class="btn btn-primary" type="submit" style="margin-top:26px">Envoyer ma demande <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="notice" id="form-notice" role="status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/logo.png" alt="" width="56" height="56"><h3 style="margin:0">Entr'Aide et Culture</h3></div>
+        <p>Association d'aide aux devoirs pour les élèves du primaire et du collège. Apprendre ensemble, grandir ensemble.</p>
+      </div>
+      <div><h3>Le site</h3><ul>
+        <li><a href="index.html">Accueil</a></li><li><a href="evenements.html">Informations et évènements</a></li>
+        <li><a href="adhesion.html">Adhérer</a></li><li><a href="don.html">Soutenir l'association</a></li></ul></div>
+      <div><h3>Contact</h3><ul><li><a data-mail href="#"></a></li></ul></div>
+    </div>
+    <div class="copyright"><span>Entr'Aide et Culture (EAC)</span><span>Tous droits réservés</span></div>
+  </div>
+</footer>
+<script src="js/config.js"></script>
+<script src="data/evenements.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infos et évènements - Entr'Aide et Culture</title>
+<meta name="description" content="Les évènements et actualités de l'association Entr'Aide et Culture.">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Entr'Aide et Culture, accueil">
+      <img src="assets/logo.png" alt="Logo Entr'Aide et Culture" width="52" height="52">
+      <span>Entr'Aide et Culture<small>EAC</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+    <ul class="nav-links"><li><a href="index.html">Accueil</a></li><li><a href="evenements.html" aria-current="page">Infos</a></li><li><a href="adhesion.html">Adhérer</a></li><li><a class="btn btn-primary" href="don.html">Soutenir</a></li></ul>
+  </div>
+</header>
+<main>
+
+<section class="page-hero"><div class="blob b1"></div>
+  <div class="container"><span class="eyebrow">Informations</span>
+  <h1>Évènements et actualités</h1>
+  <p class="lead">Les rendez-vous de l'association, ajoutés au fur et à mesure : permanences, ateliers, sorties culturelles et temps forts.</p></div>
+</section>
+<section class="section" style="padding-top:20px">
+  <div class="container">
+    <div class="filters reveal" role="tablist"><button class="active" data-mode="upcoming">À venir</button><button data-mode="past">Passés</button></div>
+    <div class="events" id="events" aria-live="polite"></div>
+    <div class="panel reveal" style="margin-top:56px;display:flex;gap:28px;align-items:center;flex-wrap:wrap;justify-content:space-between">
+      <div><h3 style="margin-bottom:6px">Une question, une idée de sortie ?</h3><p style="margin:0">Écrivez-nous, nous lisons tous les messages.</p></div>
+      <a class="btn btn-primary" data-mail href="#">Nous écrire</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/logo.png" alt="" width="56" height="56"><h3 style="margin:0">Entr'Aide et Culture</h3></div>
+        <p>Association d'aide aux devoirs pour les élèves du primaire et du collège. Apprendre ensemble, grandir ensemble.</p>
+      </div>
+      <div><h3>Le site</h3><ul>
+        <li><a href="index.html">Accueil</a></li><li><a href="evenements.html">Informations et évènements</a></li>
+        <li><a href="adhesion.html">Adhérer</a></li><li><a href="don.html">Soutenir l'association</a></li></ul></div>
+      <div><h3>Contact</h3><ul><li><a data-mail href="#"></a></li></ul></div>
+    </div>
+    <div class="copyright"><span>Entr'Aide et Culture (EAC)</span><span>Tous droits réservés</span></div>
+  </div>
+</footer>
+<script src="js/config.js"></script>
+<script src="data/evenements.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
