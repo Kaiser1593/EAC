@@ -139,8 +139,8 @@ p { margin: 0 0 1em; }
   background: var(--teal); box-shadow: var(--shadow);
   animation: breathe 7s ease-in-out infinite;
 }
-.hero-visual .ring.two { inset: -3%; background: none; border: 2px dashed rgba(29, 74, 87, 0.35); box-shadow: none; animation: spin 40s linear infinite; }
-.hero-visual img { position: relative; width: 78%; border-radius: 50%; animation: float 6s ease-in-out infinite; }
+.hero-visual .ring.two { inset: -3%; border-radius: 50%; background: none; border: 2px dashed rgba(29, 74, 87, 0.35); box-shadow: none; animation: spin 40s linear infinite; }
+.hero-visual img { position: relative; box-sizing: border-box; width: 82%; height: auto; padding: 7%; border-radius: 50%; background: var(--teal); box-shadow: var(--shadow); animation: float 6s ease-in-out infinite; }
 .chip {
   position: absolute; background: var(--white); border-radius: 999px; padding: 10px 18px;
   font-weight: 600; font-size: 0.88rem; color: var(--teal-dark); box-shadow: var(--shadow-sm);
@@ -162,7 +162,7 @@ p { margin: 0 0 1em; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 .marquee-track span { font-family: var(--serif); font-size: 1.5rem; font-style: italic; padding: 0 28px; white-space: nowrap; }
 .marquee-track i { align-self: center; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
-@keyframes scroll { to { transform: translateX(-50%); } }
+@keyframes scroll { to { transform: translateX(var(--shift, -50%)); } }
 
 /* Cards */
 .grid { display: grid; gap: 26px; }
@@ -393,3 +393,4 @@ p { margin: 0 0 1em; }
   .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+[hidden] { display: none !important; }

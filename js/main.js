@@ -109,6 +109,23 @@
     render();
   }
 
+  /* Bandeau de mots : boucle infinie sans coupure */
+  var track = document.querySelector(".marquee-track");
+  if (track) {
+    var base = track.innerHTML;
+    var fillMarquee = function () {
+      track.innerHTML = base;
+      var unit = track.scrollWidth;
+      if (!unit) return;
+      var copies = Math.ceil(window.innerWidth / unit) + 1;
+      for (var i = 0; i < copies; i++) track.insertAdjacentHTML("beforeend", base);
+      track.style.setProperty("--shift", "-" + unit + "px");
+      track.style.animationDuration = Math.round(unit / 55) + "s";
+    };
+    fillMarquee();
+    window.addEventListener("resize", fillMarquee);
+  }
+
   /* Réseaux sociaux */
   var icons = {
     facebook: '<path d="M14 8.5V6.8c0-.7.4-1 1-1h1.8V2.5H14c-2.6 0-4 1.7-4 4v2H7.5v3.3H10V21.5h4v-9.7h2.5l.5-3.3H14z"/>',
@@ -133,7 +150,7 @@
       var key = p.dataset.plan;
       var price = p.querySelector("[data-price]");
       if (cfg.adhesions && price) {
-        if (cfg.adhesions[key] === 0) price.parentNode.textContent = "Gratuit";
+        if (cfg.adhesions[key] === 0) price.parentNode.textContent = "Volontariat";
         else price.textContent = cfg.adhesions[key];
       }
       p.addEventListener("click", function () {
@@ -170,7 +187,12 @@
     document.getElementById("add-enfant").addEventListener("click", function () {
       addRow(); list.lastChild.firstChild.focus();
     });
-    var toggleKids = function () { wrap.hidden = typeSel.value !== "famille"; };
+    var ageWrap = document.getElementById("age-wrap"), age = document.getElementById("age16");
+    var toggleKids = function () {
+      wrap.hidden = typeSel.value !== "famille";
+      ageWrap.hidden = typeSel.value !== "benevole";
+      age.required = typeSel.value === "benevole";
+    };
     typeSel.addEventListener("change", toggleKids); toggleKids();
 
     form.addEventListener("submit", function (e) {
