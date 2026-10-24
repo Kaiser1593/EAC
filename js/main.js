@@ -109,6 +109,22 @@
     render();
   }
 
+  /* Réseaux sociaux */
+  var icons = {
+    facebook: '<path d="M14 8.5V6.8c0-.7.4-1 1-1h1.8V2.5H14c-2.6 0-4 1.7-4 4v2H7.5v3.3H10V21.5h4v-9.7h2.5l.5-3.3H14z"/>',
+    instagram: '<rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1"/>'
+  };
+  document.querySelectorAll("[data-socials]").forEach(function (box) {
+    Object.keys(cfg.reseaux || {}).forEach(function (k) {
+      if (!cfg.reseaux[k] || !icons[k]) return;
+      var a = document.createElement("a");
+      a.href = cfg.reseaux[k]; a.target = "_blank"; a.rel = "noopener";
+      a.setAttribute("aria-label", k.charAt(0).toUpperCase() + k.slice(1));
+      a.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor">' + icons[k] + '</svg>';
+      box.appendChild(a);
+    });
+  });
+
   /* Adhésion */
   var plans = document.querySelectorAll(".plan");
   var typeSel = document.getElementById("type");
