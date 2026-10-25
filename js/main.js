@@ -71,6 +71,15 @@
     a.href = "mailto:" + cfg.email; a.textContent = a.textContent || cfg.email;
   });
 
+  /* Article : bouton Réduire */
+  document.querySelectorAll(".post .less").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var post = b.closest(".post");
+      post.open = false;
+      post.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+    });
+  });
+
   /* Évènements */
   var list = document.getElementById("events");
   if (list) {
