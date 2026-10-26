@@ -135,6 +135,15 @@
     window.addEventListener("resize", fillMarquee);
   }
 
+  /* Carte : chargée seulement après accord du visiteur */
+  var loadMap = document.getElementById("load-map");
+  if (loadMap) {
+    loadMap.addEventListener("click", function () {
+      var box = loadMap.closest(".map-frame");
+      box.innerHTML = '<iframe title="Carte : Salle République, 105/107 rue Gabriel Husson" src="https://www.google.com/maps?q=105+rue+Gabriel+Husson+93230+Romainville&output=embed" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>';
+    });
+  }
+
   /* Réseaux sociaux */
   var icons = {
     facebook: '<path d="M14 8.5V6.8c0-.7.4-1 1-1h1.8V2.5H14c-2.6 0-4 1.7-4 4v2H7.5v3.3H10V21.5h4v-9.7h2.5l.5-3.3H14z"/>',

@@ -414,3 +414,9 @@ p { margin: 0 0 1em; }
 .post-end p:last-child { margin-bottom: 0; }
 .post .less { display: block; margin-top: 26px; background: none; border: 0; border-bottom: 2px solid var(--teal); padding: 0 0 2px; font: inherit; cursor: pointer; }
 .post[open] .less { display: inline-block; }
+.map-consent { height: 100%; min-height: 360px; background: var(--sand); padding: 32px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 6px; }
+.map-consent p { margin: 0 0 8px; }
+.legal h2 { font-size: 1.5rem; margin: 40px 0 10px; }
+.legal p, .legal li { max-width: 75ch; }
+.legal ul { padding-left: 20px; }
+.todo { background: #fff3b0; padding: 0 4px; border-radius: 4px; }

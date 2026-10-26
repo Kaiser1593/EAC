@@ -1,6 +1,6 @@
 /* Réglages de l'association : à modifier ici, sans toucher au reste du site. */
 window.EAC = {
-  email: "contact@exemple.fr",          // adresse qui reçoit les adhésions et les messages
+  email: "entraidetculture@gmail.com",          // adresse qui reçoit les adhésions et les messages
   helloassoDon: "",                     // lien de la page de don (HelloAsso, Stripe...). Vide : le don se fait par contact
   adhesions: { famille: 60, benevole: 0, adherent: 20 }, // montants annuels en euros
   reseaux: { facebook: "https://www.facebook.com/groups/327072352258236/?locale=fr_FR" }, // liens des pages de l'association (vide : icône masquée)

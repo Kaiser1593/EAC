@@ -6,9 +6,7 @@
 <title>Entr'Aide et Culture - Aide aux devoirs</title>
 <meta name="description" content="Entr'Aide et Culture, association de proximité à Romainville : aide aux devoirs, soutien à la parentalité, culture, loisirs et vacances pour tous.">
 <link rel="icon" href="assets/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/fonts.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -30,10 +28,9 @@
     <div>
       <span class="eyebrow">Association d'aide aux devoirs</span>
       <h1>Réussir ses devoirs, <em>ensemble</em>.</h1>
-      <p class="lead">Entr'Aide et Culture accompagne les élèves du CP à la 3e : un coup de main pour les leçons, de la méthode pour s'organiser, et le goût d'apprendre qui revient.</p>
+      <p class="lead">Entr'Aide et Culture accompagne les enfants du CP à la 3e : un coup de main pour les leçons, de la méthode pour s'organiser, et le goût d'apprendre qui revient.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="adhesion.html">Rejoindre l'association <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-ghost" href="#aide">Découvrir l'aide aux devoirs</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -66,7 +63,7 @@
     <div class="section-head center reveal">
       <span class="eyebrow">L'aide aux devoirs</span>
       <h2>Un accompagnement du primaire à la fin du collège</h2>
-      <p class="lead">Chaque élève avance à son rythme, avec quelqu'un qui prend le temps de l'écouter et de lui expliquer.</p>
+      <p class="lead">Chaque enfant avance à son rythme, avec quelqu'un qui prend le temps de l'écouter et de lui expliquer.</p>
     </div>
     <div class="grid grid-2">
       <article class="card level-card reveal">
@@ -145,7 +142,12 @@
         <p>105/107 rue Gabriel Husson<br>93230 Romainville<br><a href="https://www.google.com/maps/search/?api=1&query=105+rue+Gabriel+Husson+93230+Romainville" target="_blank" rel="noopener">Ouvrir dans Google Maps</a></p>
       </div>
       <div class="map-frame reveal">
-        <iframe title="Carte : Salle République, 105/107 rue Gabriel Husson" src="https://www.google.com/maps?q=105+rue+Gabriel+Husson+93230+Romainville&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <div class="map-consent">
+          <p><strong>Carte de la salle République</strong></p>
+          <p>L'affichage de la carte charge un service de Google, qui peut déposer des cookies et recevoir votre adresse IP. Elle ne s'affiche que si vous le souhaitez.</p>
+          <button type="button" class="btn btn-primary" id="load-map">Afficher la carte</button>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=105+rue+Gabriel+Husson+93230+Romainville" target="_blank" rel="noopener">Ou ouvrir l'adresse dans Google Maps</a></p>
+        </div>
       </div>
     </div>
   </div>
@@ -155,7 +157,7 @@
   <div class="container">
     <div class="section-head center reveal"><span class="eyebrow">Questions fréquentes</span><h2>Ce que les familles nous demandent</h2></div>
     <div class="faq">
-      <details class="reveal"><summary>À qui s'adresse l'aide aux devoirs ?</summary><div class="answer">Aux élèves de l'école primaire (du CP au CM2) et du collège (de la 6e à la 3e), quel que soit leur niveau.</div></details>
+      <details class="reveal"><summary>À qui s'adresse l'aide aux devoirs ?</summary><div class="answer">Aux enfants de l'école primaire (du CP au CM2) et du collège (de la 6e à la 3e), quel que soit leur niveau.</div></details>
       <details class="reveal"><summary>Faut-il être adhérent pour inscrire son enfant ?</summary><div class="answer">Non. L'inscription de l'enfant à l'aide aux devoirs est distincte de l'adhésion. L'adhésion (20 € par an) est facultative : elle donne accès a diverses activités de l'association comme le handfit et des ateliers cuisine parents/enfants. Tout se fait depuis la page Adhérer.</div></details>
       <details class="reveal"><summary>Peut-on devenir bénévole ?</summary><div class="answer">Bien sûr. Étudiants, parents, retraités : toute personne qui souhaite donner un peu de temps est la bienvenue. Choisissez l'adhésion bénévole.</div></details>
       <details class="reveal"><summary>Comment connaître les prochains évènements ?</summary><div class="answer">Tout est annoncé dans l'onglet Infos, mis à jour au fur et à mesure.</div></details>
@@ -167,7 +169,7 @@
   <div class="container">
     <div class="cta-box reveal">
       <h2>Faire grandir l'association avec nous</h2>
-      <p>En adhérant ou en faisant un don, vous permettez à plus d'élèves de profiter d'un accompagnement de qualité.</p>
+      <p>En adhérant ou en faisant un don, vous permettez à plus d'enfants de profiter d'un accompagnement de qualité.</p>
       <div class="cta-actions"><a class="btn btn-light" href="adhesion.html">Adhérer</a><a class="btn btn-ghost" style="border-color:#fff;color:#fff" href="don.html">Faire un don</a></div>
     </div>
   </div>
@@ -186,7 +188,7 @@
         <li><a href="adhesion.html">Adhérer</a></li><li><a href="don.html">Soutenir l'association</a></li></ul></div>
       <div><h3>Contact</h3><ul><li><a data-mail href="#"></a></li><li>Salle République, 105/107 rue Gabriel Husson, 93230 Romainville</li><li><a href="index.html#horaires">Horaires</a></li></ul><div class="socials" data-socials></div></div>
     </div>
-    <div class="copyright"><span>Entr'Aide et Culture (EAC)</span><span>Tous droits réservés</span></div>
+    <div class="copyright"><span>Entr'Aide et Culture (EAC)</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></span></div>
   </div>
 </footer>
 <script src="js/config.js"></script>
