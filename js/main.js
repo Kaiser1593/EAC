@@ -68,7 +68,7 @@
 
   var cfg = window.EAC || {};
   document.querySelectorAll("[data-mail]").forEach(function (a) {
-    a.href = "mailto:" + cfg.email; a.textContent = a.textContent || cfg.email;
+    a.href = "mailto:" + cfg.email + (a.dataset.subject ? "?subject=" + encodeURIComponent(a.dataset.subject) : ""); a.textContent = a.textContent || cfg.email;
   });
 
   /* Article : bouton Réduire */
@@ -231,41 +231,27 @@
     });
   }
 
-  /* Dons */
-  var donForm = document.getElementById("don-form");
-  if (donForm) {
-    var amount = 20, monthly = false;
-    var out = document.getElementById("don-total"), custom = document.getElementById("custom");
-    var label = document.getElementById("don-label");
-    var update = function () {
-      out.textContent = amount + " €";
-      label.textContent = monthly ? "par mois" : "don unique";
-    };
-    donForm.querySelectorAll(".amount").forEach(function (b) {
-      b.addEventListener("click", function () {
-        donForm.querySelectorAll(".amount").forEach(function (x) { x.classList.remove("active"); });
-        b.classList.add("active"); amount = +b.dataset.amount; custom.value = ""; update();
+  /* Dons : coordonnées bancaires lues dans config.js */
+  var bank = document.getElementById("bank");
+  if (bank) {
+    bank.querySelectorAll("[data-bank]").forEach(function (dd) {
+      var v = cfg[dd.dataset.bank];
+      if (!v) { dd.parentNode.style.display = "none"; return; }
+      dd.textContent = v;
+      var btn = document.createElement("button");
+      btn.type = "button"; btn.className = "copy"; btn.textContent = "Copier";
+      btn.addEventListener("click", function () {
+        var done = function () { btn.textContent = "Copié"; setTimeout(function () { btn.textContent = "Copier"; }, 1800); };
+        if (navigator.clipboard) navigator.clipboard.writeText(v).then(done, function () {});
       });
+      dd.appendChild(btn);
     });
-    custom.addEventListener("input", function () {
-      var v = parseInt(custom.value, 10);
-      if (v > 0) { donForm.querySelectorAll(".amount").forEach(function (x) { x.classList.remove("active"); }); amount = v; update(); }
-    });
-    donForm.querySelectorAll(".toggle button").forEach(function (b) {
-      b.addEventListener("click", function () {
-        donForm.querySelectorAll(".toggle button").forEach(function (x) { x.classList.remove("active"); });
-        b.classList.add("active"); monthly = b.dataset.mode === "monthly"; update();
-      });
-    });
-    donForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (cfg.helloassoDon) { window.location.href = cfg.helloassoDon; return; }
-      var n = document.getElementById("don-notice");
-      n.innerHTML = "Le paiement en ligne n'est pas encore ouvert. Pour faire un don de " + amount + " € (" + (monthly ? "mensuel" : "unique") + "), écrivez-nous à <a href=\"mailto:" + cfg.email + "?subject=" + encodeURIComponent("Don EAC de " + amount + " euros") + "\"><u>" + cfg.email + "</u></a> et nous vous indiquerons comment procéder.";
-      n.classList.add("show");
-    });
-    update();
-    var bar = document.querySelector(".progress");
-    if (bar) { if (!cfg.objectifDon) bar.parentElement.style.display = "none"; }
+  }
+
+  /* Dons : bouton PayPal facultatif */
+  var pp = document.getElementById("paypal-btn");
+  if (pp && cfg.paypal) {
+    pp.href = /^https?:/.test(cfg.paypal) ? cfg.paypal : "https://www.paypal.me/" + cfg.paypal;
+    pp.style.display = "";
   }
 })();

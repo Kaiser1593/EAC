@@ -40,22 +40,15 @@
         <div class="card" style="padding:24px"><h3>Don libre</h3><p>Le montant et la fréquence vous appartiennent.</p></div>
       </div>
     </div>
-    <div class="form-card reveal right">
-      <form id="don-form">
-        <div class="legend">Fréquence</div>
-        <div class="toggle"><button type="button" class="active" data-mode="once">Don unique</button><button type="button" data-mode="monthly">Don mensuel</button></div>
-        <div class="legend">Montant</div>
-        <div class="amounts">
-          <button type="button" class="amount" data-amount="10">10 €</button>
-          <button type="button" class="amount active" data-amount="20">20 €</button>
-          <button type="button" class="amount" data-amount="50">50 €</button>
-          <button type="button" class="amount" data-amount="100">100 €</button>
-        </div>
-        <div class="field"><label for="custom">Autre montant, en euros</label><input id="custom" type="number" min="1" inputmode="numeric" placeholder="Saisir un montant"></div>
-        <div class="total"><span id="don-label">don unique</span><b id="don-total">20 €</b></div>
-        <button class="btn btn-primary" type="submit" style="width:100%">Faire un don <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        <div class="notice" id="don-notice" role="status"></div>
-      </form>
+    <div class="form-card reveal right" id="virement">
+      <h2 style="font-size:1.8rem">Faire un don par virement</h2>
+      <p>Pour soutenir l'association, effectuez un virement avec les coordonnées ci-dessous.</p>
+      <dl class="bank" id="bank">
+        <div><dt>Bénéficiaire</dt><dd data-bank="titulaire"></dd></div>
+        <div><dt>IBAN</dt><dd data-bank="iban"></dd></div>
+      </dl>
+      <p style="margin:18px 0 0;font-size:.92rem">Merci d'indiquer « Don » en libellé. Pour être remercié ou nous poser une question, écrivez-nous à <a data-mail href="#"></a>.</p>
+      <a class="btn btn-primary" id="paypal-btn" href="#" target="_blank" rel="noopener" style="display:none;margin-top:14px">Donner via PayPal</a>
     </div>
   </div>
 </section>
